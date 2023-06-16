@@ -1,60 +1,62 @@
-const { Sequelize, DataTypes } = require("sequelize");
+//test variant
 
-const sequelize = new Sequelize("db_university", "root", "", {
-  host: "localhost",
-  dialect: "mysql",
-});
+// const { Sequelize, DataTypes } = require("sequelize");
 
-const Student = sequelize.define(
-  "Student",
-  {
-    // Model attributes are defined here
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    name_and_surname: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    birthday: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    course: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    year_of_admission: {
-     type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    specialty_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-  },
-  {
-    tableName: "students",
-    timestamps: false
-  }
-);
+// const sequelize = new Sequelize("db_university", "root", "", {
+//   host: "localhost",
+//   dialect: "mysql",
+// });
 
-// `sequelize.define` also returns the model
-console.log(Student === sequelize.models.Student); // true
+// const Student = sequelize.define(
+//   "Student",
+//   {
+//     // Model attributes are defined here
+//     id: {
+//       type: DataTypes.INTEGER,
+//       allowNull: false,
+//       primaryKey: true,
+//       autoIncrement: true,
+//     },
+//     name_and_surname: {
+//       type: DataTypes.STRING,
+//       allowNull: false,
+//     },
+//     birthday: {
+//       type: DataTypes.DATE,
+//       allowNull: false,
+//     },
+//     course: {
+//       type: DataTypes.INTEGER,
+//       allowNull: false,
+//     },
+//     year_of_admission: {
+//       type: DataTypes.INTEGER,
+//       allowNull: false,
+//     },
+//     specialty_id: {
+//       type: DataTypes.INTEGER,
+//       allowNull: false,
+//     },
+//   },
+//   {
+//     tableName: "students",
+//     timestamps: false,
+//   }
+// );
 
-(async () => {
-  try {
-    await Student.sync({
-      alter: true,
-      force: false,
-    });
-  } catch (error) {
-    console.error(error);
-  }
-})();
+// // `sequelize.define` also returns the model
+// console.log(Student === sequelize.models.Student); // true
+
+// (async () => {
+//   try {
+//     await Student.sync({
+//       alter: true,
+//       force: false,
+//     });
+//   } catch (error) {
+//     console.error(error);
+//   }
+// })();
 
 // const mysql = require("mysql2");
 
